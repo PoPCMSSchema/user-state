@@ -1,0 +1,4 @@
+services:
+    PoP\UserState\FieldValueResolvers\:
+        resource: '../src/FieldValueResolvers/*'
+        public: true
