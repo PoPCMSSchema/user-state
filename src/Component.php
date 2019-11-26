@@ -33,5 +33,9 @@ class Component extends AbstractComponent
 
         // Initialize classes
         ContainerBuilderUtils::attachFieldValueResolversFromNamespace(__NAMESPACE__.'\\FieldValueResolvers');
+        // Boot conditional on API package being installed
+        if (class_exists('\PoP\API\Component')) {
+            \PoP\UserState\Conditional\api\ComponentBoot::boot();
+        }
     }
 }
