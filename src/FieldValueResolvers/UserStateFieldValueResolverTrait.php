@@ -2,9 +2,11 @@
 namespace PoP\UserState\FieldValueResolvers;
 
 use PoP\UserState\Environment;
-use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
-use PoP\ComponentModel\Facades\Engine\EngineFacade;
 use PoP\ComponentModel\GeneralUtils;
+use PoP\Translation\Facades\TranslationAPIFacade;
+use PoP\ComponentModel\Facades\Engine\EngineFacade;
+use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
+use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
 
 trait UserStateFieldValueResolverTrait
 {
