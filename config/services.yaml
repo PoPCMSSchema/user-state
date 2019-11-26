@@ -2,3 +2,7 @@ services:
     PoP\UserState\FieldValueResolvers\:
         resource: '../src/FieldValueResolvers/*'
         public: true
+
+    PoP\UserState\DirectiveResolvers\:
+        resource: '../src/DirectiveResolvers/*'
+        public: true
