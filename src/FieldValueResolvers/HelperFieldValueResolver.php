@@ -12,13 +12,6 @@ class HelperFieldValueResolver extends AbstractOperatorOrHelperFieldValueResolve
 {
     use UserStateFieldValueResolverTrait;
 
-    public static function getClassesToAttachTo(): array
-    {
-        return [
-            AbstractFieldResolver::class,
-        ];
-    }
-
     public static function getFieldNamesToResolve(): array
     {
         if (!self::registerFieldNames()) {
