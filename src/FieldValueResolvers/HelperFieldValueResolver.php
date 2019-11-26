@@ -7,9 +7,8 @@ use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
 use PoP\ComponentModel\FieldValueResolvers\AbstractOperatorOrHelperFieldValueResolver;
 use PoP\Users\Dataloader_ConvertibleUserList;
 use PoP\ComponentModel\Engine_Vars;
-use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
 
-class OperatorOrHelperFieldValueResolver extends AbstractOperatorOrHelperFieldValueResolver
+class HelperFieldValueResolver extends AbstractOperatorOrHelperFieldValueResolver
 {
     use UserStateFieldValueResolverTrait;
 
