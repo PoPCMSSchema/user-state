@@ -20,4 +20,17 @@ class Component extends AbstractComponent
         parent::init();
         self::initYAMLServices(dirname(__DIR__));
     }
+
+    /**
+     * Boot component
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        // Initialize classes
+        ContainerBuilderUtils::attachFieldValueResolversFromNamespace(__NAMESPACE__.'\\FieldValueResolvers');
+    }
 }

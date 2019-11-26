@@ -11,6 +11,8 @@ use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
 
 class OperatorOrHelperFieldValueResolver extends AbstractOperatorOrHelperFieldValueResolver
 {
+    use UserStateFieldValueResolverTrait;
+
     public static function getClassesToAttachTo(): array
     {
         return [
@@ -20,6 +22,9 @@ class OperatorOrHelperFieldValueResolver extends AbstractOperatorOrHelperFieldVa
 
     public static function getFieldNamesToResolve(): array
     {
+        if (!self::registerFieldNames()) {
+            return [];
+        }
         return [
             'me',
         ];
@@ -40,23 +45,6 @@ class OperatorOrHelperFieldValueResolver extends AbstractOperatorOrHelperFieldVa
             'me' => $translationAPI->__('My user ID (user must be logged in)', 'user-state'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($fieldResolver, $fieldName);
-    }
-
-    protected function getValidationCheckpoints(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?array
-    {
-        $checkpoints = [
-            'me' => UserStateCheckpointSets::LOGGEDIN_DATAFROMSERVER,
-        ];
-        return $checkpoints[$fieldName];
-    }
-
-    protected function getValidationCheckpointsErrorMessage(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?string
-    {
-        $translationAPI = TranslationAPIFacade::getInstance();
-        $messages = [
-            'me' => $translationAPI->__('You must be logged in', ''),
-        ];
-        return $messages[$fieldName];
     }
 
     public function resolveValue(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
