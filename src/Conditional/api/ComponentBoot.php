@@ -33,7 +33,7 @@ class ComponentBoot
          * Then, the CacheControl for field "__schema" must be set to "no-cache"
          */
         if (Environment::disableUserStateFieldsIfUserNotLoggedIn()) {
-            SchemaNoCacheCacheControlDirectiveResolver::attach(AttachableExtensionGroups::FIELDDIRECTIVERESOLVERS);
+            SchemaNoCacheCacheControlDirectiveResolver::attach(AttachableExtensionGroups::DIRECTIVERESOLVERS);
         }
     }
 }
