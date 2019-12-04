@@ -6,7 +6,7 @@ use PoP\ComponentModel\GeneralUtils;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Facades\Engine\EngineFacade;
 use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
-use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
 trait UserStateFieldValueResolverTrait
 {
@@ -27,12 +27,12 @@ trait UserStateFieldValueResolverTrait
         return true;
     }
 
-    protected function getValidationCheckpoints(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?array
+    protected function getValidationCheckpoints(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?array
     {
         return UserStateCheckpointSets::LOGGEDIN_DATAFROMSERVER;
     }
 
-    protected function getValidationCheckpointsErrorMessage(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?string
+    protected function getValidationCheckpointsErrorMessage(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
