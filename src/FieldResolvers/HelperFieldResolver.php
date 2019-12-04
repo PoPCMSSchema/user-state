@@ -1,16 +1,16 @@
 <?php
-namespace PoP\UserState\FieldValueResolvers;
+namespace PoP\UserState\FieldResolvers;
 
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\FieldValueResolvers\AbstractOperatorOrHelperFieldValueResolver;
+use PoP\ComponentModel\FieldResolvers\AbstractOperatorOrHelperFieldResolver;
 use PoP\Users\Dataloader_ConvertibleUserList;
 use PoP\ComponentModel\Engine_Vars;
 
-class HelperFieldValueResolver extends AbstractOperatorOrHelperFieldValueResolver
+class HelperFieldResolver extends AbstractOperatorOrHelperFieldResolver
 {
-    use UserStateFieldValueResolverTrait;
+    use UserStateFieldResolverTrait;
 
     public static function getFieldNamesToResolve(): array
     {

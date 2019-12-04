@@ -32,7 +32,7 @@ class Component extends AbstractComponent
         parent::boot();
 
         // Initialize classes
-        ContainerBuilderUtils::attachFieldValueResolversFromNamespace(__NAMESPACE__.'\\FieldValueResolvers');
+        ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
         ContainerBuilderUtils::attachDirectiveResolversFromNamespace(__NAMESPACE__.'\\DirectiveResolvers');
         // Boot conditional on API package being installed
         if (class_exists('\PoP\API\Component')) {

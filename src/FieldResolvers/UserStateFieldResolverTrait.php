@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserState\FieldValueResolvers;
+namespace PoP\UserState\FieldResolvers;
 
 use PoP\UserState\Environment;
 use PoP\ComponentModel\GeneralUtils;
@@ -8,7 +8,7 @@ use PoP\ComponentModel\Facades\Engine\EngineFacade;
 use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
-trait UserStateFieldValueResolverTrait
+trait UserStateFieldResolverTrait
 {
     /**
      * If the user is not logged in, and environment variable `DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN` is true,
