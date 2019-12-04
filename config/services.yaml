@@ -1,6 +1,6 @@
 services:
-    PoP\UserState\FieldValueResolvers\:
-        resource: '../src/FieldValueResolvers/*'
+    PoP\UserState\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
         public: true
 
     PoP\UserState\DirectiveResolvers\:
