@@ -1,5 +1,5 @@
 <?php
-namespace PoP\UserState\Conditional\api;
+namespace PoP\UserState\Conditional\API;
 
 use PoP\UserState\Environment;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;

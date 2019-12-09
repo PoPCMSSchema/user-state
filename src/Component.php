@@ -36,7 +36,7 @@ class Component extends AbstractComponent
         ContainerBuilderUtils::attachDirectiveResolversFromNamespace(__NAMESPACE__.'\\DirectiveResolvers');
         // Boot conditional on API package being installed
         if (class_exists('\PoP\API\Component')) {
-            \PoP\UserState\Conditional\api\ComponentBoot::boot();
+            \PoP\UserState\Conditional\API\ComponentBoot::boot();
         }
     }
 }
