@@ -6,7 +6,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractOperatorOrHelperFieldResolver;
 use PoP\ComponentModel\Engine_Vars;
-use PoP\Users\TypeDataResolvers\ConvertibleUserTypeDataResolver;
+use PoP\Users\TypeDataResolvers\UserTypeDataResolver;
 
 class HelperFieldResolver extends AbstractOperatorOrHelperFieldResolver
 {
@@ -54,7 +54,7 @@ class HelperFieldResolver extends AbstractOperatorOrHelperFieldResolver
     {
         switch ($fieldName) {
             case 'me':
-                return ConvertibleUserTypeDataResolver::class;
+                return UserTypeDataResolver::class;
         }
 
         return parent::resolveFieldDefaultTypeDataResolverClass($typeResolver, $fieldName, $fieldArgs);
