@@ -34,7 +34,7 @@ class HelperFieldResolver extends AbstractOperatorOrHelperFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-            'me' => $translationAPI->__('My user ID (user must be logged in)', 'user-state'),
+            'me' => $translationAPI->__('The logged-in user', 'user-state'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
