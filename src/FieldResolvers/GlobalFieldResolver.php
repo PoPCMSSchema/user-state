@@ -4,11 +4,11 @@ namespace PoP\UserState\FieldResolvers;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\FieldResolvers\AbstractOperatorOrHelperFieldResolver;
+use PoP\ComponentModel\FieldResolvers\AbstractGlobalFieldResolver;
 use PoP\ComponentModel\Engine_Vars;
 use PoP\Users\TypeResolvers\UserTypeResolver;
 
-class HelperFieldResolver extends AbstractOperatorOrHelperFieldResolver
+class GlobalFieldResolver extends AbstractGlobalFieldResolver
 {
     use UserStateFieldResolverTrait;
 
