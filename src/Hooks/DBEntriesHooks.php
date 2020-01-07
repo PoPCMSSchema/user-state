@@ -2,6 +2,7 @@
 namespace PoP\UserState\Hooks;
 
 use PoP\Engine\Hooks\AbstractHookSet;
+use PoP\UserState\FieldResolvers\GlobalFieldResolver;
 
 class DBEntriesHooks extends AbstractHookSet
 {
@@ -19,9 +20,7 @@ class DBEntriesHooks extends AbstractHookSet
     {
         $dbname_datafields['userstate'] = $this->hooksAPI->applyFilters(
             'PoP\UserState\DataloaderHooks:metaFields',
-            [
-                'me',
-            ]
+            GlobalFieldResolver::getFieldNamesToResolve()
         );
         return $dbname_datafields;
     }
