@@ -6,3 +6,7 @@ services:
     PoP\UserState\DirectiveResolvers\:
         resource: '../src/DirectiveResolvers/*'
         public: true
+
+    PoP\UserState\Hooks\:
+        resource: '../src/Hooks/*'
+        public: true
