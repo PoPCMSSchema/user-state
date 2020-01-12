@@ -39,5 +39,8 @@ class Component extends AbstractComponent
         if (class_exists('\PoP\API\Component')) {
             \PoP\UserState\Conditional\API\ComponentBoot::boot();
         }
+        if (class_exists('\PoP\GraphQL\Component')) {
+            \PoP\UserState\Conditional\GraphQL\ComponentBoot::boot();
+        }
     }
 }
