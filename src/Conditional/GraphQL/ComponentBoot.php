@@ -29,7 +29,7 @@ class ComponentBoot
     protected static function attachDynamicDirectiveResolvers()
     {
         /**
-         * If `DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN` is true, then the "__schema" field is dynamic: Fields will be available or not depending on the user being logged in or not
+         * If `DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN` is true, then the schema (as obtained by querying the "__schema" field) is dynamic: Fields will be available or not depending on the user being logged in or not
          * Then, the CacheControl for field "__schema" must be set to "no-cache"
          */
         if (Environment::disableUserStateFieldsIfUserNotLoggedIn()) {
