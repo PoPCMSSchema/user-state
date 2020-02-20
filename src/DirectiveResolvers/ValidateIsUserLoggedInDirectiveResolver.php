@@ -42,7 +42,7 @@ class ValidateIsUserLoggedInDirectiveResolver extends ValidateDirectiveResolver
             $schemaErrors[] = [
                 Tokens::PATH => $dataFields,
                 Tokens::MESSAGE => sprintf(
-                    $translationAPI->__('You need to be logged in to access fields: \'%s\'', 'user-state'),
+                    $translationAPI->__('You must be logged in to access fields: \'%s\'', 'user-state'),
                     implode(
                         $translationAPI->__('\', \''),
                         $dataFields

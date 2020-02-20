@@ -36,7 +36,7 @@ trait UserStateFieldResolverTrait
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
-            $translationAPI->__('You must be logged in to execute field \'%s\'', ''),
+            $translationAPI->__('You must be logged in to access field \'%s\'', ''),
             $fieldName
         );
     }
