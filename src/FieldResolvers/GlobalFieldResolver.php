@@ -19,6 +19,7 @@ class GlobalFieldResolver extends AbstractGlobalFieldResolver
         }
         return [
             'me',
+            'isUserLoggedIn',
         ];
     }
 
@@ -26,6 +27,7 @@ class GlobalFieldResolver extends AbstractGlobalFieldResolver
     {
         $types = [
             'me' => SchemaDefinition::TYPE_ID,
+            'isUserLoggedIn' => SchemaDefinition::TYPE_BOOL,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -35,6 +37,7 @@ class GlobalFieldResolver extends AbstractGlobalFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
             'me' => $translationAPI->__('The logged-in user', 'user-state'),
+            'isUserLoggedIn' => $translationAPI->__('Is the user logged-in?', 'user-state'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -45,6 +48,9 @@ class GlobalFieldResolver extends AbstractGlobalFieldResolver
             case 'me':
                 $vars = Engine_Vars::getVars();
                 return $vars['global-userstate']['current-user-id'];
+            case 'isUserLoggedIn':
+                $vars = Engine_Vars::getVars();
+                return $vars['global-userstate']['is-user-logged-in'];
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
