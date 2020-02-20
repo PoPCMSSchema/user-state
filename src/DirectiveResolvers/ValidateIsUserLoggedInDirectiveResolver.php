@@ -29,4 +29,10 @@ class ValidateIsUserLoggedInDirectiveResolver extends AbstractValidateCheckpoint
             )
         );
     }
+
+    public function getSchemaDirectiveDescription(TypeResolverInterface $typeResolver): ?string
+    {
+        $translationAPI = TranslationAPIFacade::getInstance();
+        return $translationAPI->__('It validates if the user is logged-in', 'component-model');
+    }
 }
