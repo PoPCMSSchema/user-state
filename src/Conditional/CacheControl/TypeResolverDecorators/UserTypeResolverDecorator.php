@@ -28,11 +28,11 @@ class UserTypeResolverDecorator extends AbstractTypeResolverDecorator
         $fieldQueryInterpreter = FieldQueryInterpreterFacade::getInstance();
         return [
             ValidateIsUserLoggedInDirectiveResolver::getDirectiveName() => [
-                $fieldQueryInterpreter->composeDirective(
+                $fieldQueryInterpreter->getDirective(
                     AbstractCacheControlDirectiveResolver::getDirectiveName(),
-                    $fieldQueryInterpreter->getFieldArgsAsString([
+                    [
                         'maxAge' => 0,
-                    ])
+                    ]
                 )
             ]
         ];
