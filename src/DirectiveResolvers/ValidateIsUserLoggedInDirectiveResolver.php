@@ -18,7 +18,7 @@ class ValidateIsUserLoggedInDirectiveResolver extends AbstractValidateCheckpoint
         return UserStateCheckpointSets::LOGGEDIN_DATAFROMSERVER;
     }
 
-    protected function getValidationCheckpointErrorMessage(TypeResolverInterface $typeResolver, array $failedDataFields): string
+    protected function getValidationFailedMessage(TypeResolverInterface $typeResolver, array $failedDataFields): string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
