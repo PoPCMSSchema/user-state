@@ -22,7 +22,7 @@ class ValidateIsUserLoggedInDirectiveResolver extends AbstractValidateCheckpoint
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
-            $translationAPI->__('You must be logged in to access fields \'%s\'', 'user-state'),
+            $translationAPI->__('You must be logged in to access field(s) \'%s\'', 'user-state'),
             implode(
                 $translationAPI->__('\', \''),
                 $failedDataFields
