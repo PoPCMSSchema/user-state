@@ -16,7 +16,7 @@ abstract class AbstractMaybeDisableUserStateFieldsIfUserNotLoggedInFieldResolver
         /**
          * Check if to disable the user fields
          */
-        if (Environment::usePrivateSchemaMode() && $this->disableUserStateFields()) {
+        if (Environment::usePrivateSchemaMode() && $this->disableFieldsInPrivateSchemaMode()) {
             $this->hooksAPI->addFilter(
                 AbstractTypeResolver::HOOK_RESOLVED_FIELD_NAMES,
                 array($this, 'maybeFilterFieldNames'),
@@ -26,7 +26,7 @@ abstract class AbstractMaybeDisableUserStateFieldsIfUserNotLoggedInFieldResolver
         }
     }
 
-    protected function disableUserStateFields(): bool
+    protected function disableFieldsInPrivateSchemaMode(): bool
     {
         /**
          * If the user is not logged in, then do not register field names
