@@ -1,22 +1,17 @@
 <?php
 namespace PoP\UserState\FieldResolvers;
 
+use PoP\ComponentModel\Engine_Vars;
+use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\FieldResolvers\AbstractGlobalFieldResolver;
-use PoP\ComponentModel\Engine_Vars;
-use PoP\Users\TypeResolvers\UserTypeResolver;
+use PoP\UserState\FieldResolvers\AbstractGlobalUserStateFieldResolver;
 
-class GlobalFieldResolver extends AbstractGlobalFieldResolver
+class GlobalFieldResolver extends AbstractGlobalUserStateFieldResolver
 {
-    use UserStateFieldResolverTrait;
-
     public static function getFieldNamesToResolve(): array
     {
-        if (!self::registerFieldNames()) {
-            return [];
-        }
         return [
             'me',
             'isUserLoggedIn',
