@@ -2,24 +2,24 @@
 namespace PoP\UserState\FieldResolvers;
 
 use PoP\ComponentModel\Engine_Vars;
+use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\UserState\FieldResolvers\AbstractGlobalUserStateFieldResolver;
 
-class GlobalUserStateFieldResolver extends AbstractGlobalUserStateFieldResolver
+trait MeFieldResolverTrait
 {
     public static function getFieldNamesToResolve(): array
     {
         return [
-            'loggedInUserID',
+            'me',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-            'loggedInUserID' => SchemaDefinition::TYPE_ID,
+            'me' => SchemaDefinition::TYPE_ID,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -28,7 +28,7 @@ class GlobalUserStateFieldResolver extends AbstractGlobalUserStateFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-            'loggedInUserID' => $translationAPI->__('The logged-in user\'s ID', 'user-state'),
+            'me' => $translationAPI->__('The logged-in user', 'user-state'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -36,11 +36,21 @@ class GlobalUserStateFieldResolver extends AbstractGlobalUserStateFieldResolver
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         switch ($fieldName) {
-            case 'loggedInUserID':
+            case 'me':
                 $vars = Engine_Vars::getVars();
                 return $vars['global-userstate']['current-user-id'];
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
+    }
+
+    public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
+    {
+        switch ($fieldName) {
+            case 'me':
+                return UserTypeResolver::class;
+        }
+
+        return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
     }
 }
