@@ -5,5 +5,5 @@ interface UserStateTypeDataResolverInterface {
 
     public function isUserLoggedIn(): bool;
     public function getCurrentUser();
-    public function getCurrentUserId();
+    public function getCurrentUserID();
 }

@@ -41,7 +41,7 @@ class VarsHooks extends AbstractHookSet
         if ($userStateTypeDataResolverFacade->isUserLoggedIn()) {
             $vars['global-userstate']['is-user-logged-in'] = true;
             $vars['global-userstate']['current-user'] = $userStateTypeDataResolverFacade->getCurrentUser();
-            $vars['global-userstate']['current-user-id'] = $userStateTypeDataResolverFacade->getCurrentUserId();
+            $vars['global-userstate']['current-user-id'] = $userStateTypeDataResolverFacade->getCurrentUserID();
         } else {
             $vars['global-userstate']['is-user-logged-in'] = false;
             $vars['global-userstate']['current-user'] = null;
