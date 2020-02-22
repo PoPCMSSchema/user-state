@@ -40,6 +40,11 @@ abstract class AbstractMaybeDisableUserStateFieldsIfUserNotLoggedInFieldResolver
 
     public function maybeFilterFieldNames(bool $include, TypeResolverInterface $typeResolver, FieldResolverInterface $fieldResolver, string $fieldName): bool
     {
+        // Because there may be several hooks chained, if any of them has already rejected the field, then already return that response
+        if (!$include) {
+            return false;
+        }
+        // Check if to remove the field
         return !$this->removeFieldNames($typeResolver, $fieldResolver, $fieldName);
     }
     /**
