@@ -9,6 +9,15 @@ use PoP\UserState\Hooks\AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet;
 class MaybeDisableUserStateFieldsIfUserNotLoggedInHookSet extends AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet
 {
     /**
+     * Apply to all fields
+     *
+     * @return array
+     */
+    protected function getFieldNames(): array
+    {
+        return [];
+    }
+    /**
      * Remove the fieldNames if the fieldResolver is an instance of the "user state" one
      *
      * @param boolean $include
