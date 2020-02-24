@@ -6,7 +6,7 @@ use PoP\ComponentModel\Facades\Schema\FieldQueryInterpreterFacade;
 use PoP\ComponentModel\TypeResolverDecorators\AbstractTypeResolverDecorator;
 use PoP\UserState\DirectiveResolvers\ValidateIsUserLoggedInDirectiveResolver;
 
-abstract class AbstractValidateIsUserLoggedInTypeResolverDecorator extends AbstractTypeResolverDecorator
+abstract class AbstractValidateIsUserLoggedInForDirectivesTypeResolverDecorator extends AbstractTypeResolverDecorator
 {
     /**
      * Verify that the user is logged in before checking the roles/capabilities
