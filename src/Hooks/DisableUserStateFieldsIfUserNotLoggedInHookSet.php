@@ -6,7 +6,7 @@ use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
 use PoP\UserState\FieldResolvers\AbstractUserStateFieldResolver;
 use PoP\UserState\Hooks\AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet;
 
-class MaybeDisableUserStateFieldsIfUserNotLoggedInHookSet extends AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet
+class DisableUserStateFieldsIfUserNotLoggedInHookSet extends AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet
 {
     /**
      * Apply to all fields

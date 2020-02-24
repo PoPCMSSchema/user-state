@@ -3,10 +3,10 @@ namespace PoP\UserState\TypeResolverDecorators;
 
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Facades\Schema\FieldQueryInterpreterFacade;
-use PoP\ComponentModel\TypeResolverDecorators\AbstractTypeResolverDecorator;
+use PoP\ComponentModel\TypeResolverDecorators\AbstractPublicSchemaTypeResolverDecorator;
 use PoP\UserState\DirectiveResolvers\ValidateIsUserLoggedInDirectiveResolver;
 
-abstract class AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator extends AbstractTypeResolverDecorator
+abstract class AbstractValidateIsUserLoggedInForFieldsTypeResolverDecorator extends AbstractPublicSchemaTypeResolverDecorator
 {
     /**
      * Verify that the user is logged in before checking the roles/capabilities

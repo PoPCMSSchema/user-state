@@ -20,6 +20,7 @@ class ValidateIsUserLoggedInDirectiveResolver extends AbstractValidateCheckpoint
 
     protected function getValidationFailedMessage(TypeResolverInterface $typeResolver, array $failedDataFields): string
     {
+        // var_dump('aca', $failedDataFields, get_called_class());
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
             $translationAPI->__('You must be logged in to access field(s) \'%s\'', 'user-state'),
