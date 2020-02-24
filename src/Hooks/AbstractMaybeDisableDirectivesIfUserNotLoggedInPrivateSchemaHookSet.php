@@ -4,7 +4,7 @@ namespace PoP\UserState\Hooks;
 use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
 use PoP\API\Hooks\AbstractMaybeDisableDirectivesInPrivateSchemaHookSet;
 
-abstract class AbstractMaybeDisableDirectivesIfUserNotLoggedInHookSet extends AbstractMaybeDisableDirectivesInPrivateSchemaHookSet
+abstract class AbstractMaybeDisableDirectivesIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableDirectivesInPrivateSchemaHookSet
 {
     protected function enabled(): bool
     {
