@@ -4,7 +4,7 @@ namespace PoP\UserState\Hooks;
 use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
 use PoP\API\Hooks\AbstractMaybeDisableFieldsInPrivateSchemaHookSet;
 
-abstract class AbstractMaybeDisableFieldsIfUserNotLoggedInHookSet extends AbstractMaybeDisableFieldsInPrivateSchemaHookSet
+abstract class AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableFieldsInPrivateSchemaHookSet
 {
     protected function enabled(): bool
     {
