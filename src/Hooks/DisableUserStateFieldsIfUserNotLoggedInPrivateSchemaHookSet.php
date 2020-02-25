@@ -26,7 +26,7 @@ class DisableUserStateFieldsIfUserNotLoggedInPrivateSchemaHookSet extends Abstra
      * @param string $fieldName
      * @return boolean
      */
-    protected function removeFieldNames(TypeResolverInterface $typeResolver, FieldResolverInterface $fieldResolver, string $fieldName): bool
+    protected function removeFieldName(TypeResolverInterface $typeResolver, FieldResolverInterface $fieldResolver, string $fieldName): bool
     {
         return ($fieldResolver instanceof AbstractUserStateFieldResolver);
     }
