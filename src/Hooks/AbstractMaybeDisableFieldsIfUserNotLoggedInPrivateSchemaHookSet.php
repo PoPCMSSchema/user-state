@@ -2,21 +2,34 @@
 namespace PoP\UserState\Hooks;
 
 use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
 use PoP\API\Hooks\AbstractMaybeDisableFieldsInPrivateSchemaHookSet;
 
 abstract class AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableFieldsInPrivateSchemaHookSet
 {
-    protected function enabled(): bool
+    /**
+     * Decide if to remove the fieldNames
+     *
+     * @param TypeResolverInterface $typeResolver
+     * @param FieldResolverInterface $fieldResolver
+     * @param string $fieldName
+     * @return boolean
+     */
+    protected function removeFieldName(TypeResolverInterface $typeResolver, FieldResolverInterface $fieldResolver, string $fieldName): bool
     {
-        // If it is not a private schema, then already do not enable
-        if (!parent::enabled()) {
-            return false;
-        }
-
         /**
-         * If the user is not logged in, then do not register field names
+         * If the user is not logged in, then remove the field
+         */
+        return !$this->isUserLoggedIn();
+    }
+
+    protected function isUserLoggedIn(): bool
+    {
+        /**
+         * If the user is not logged in, then remove the field
          */
         $userStateTypeDataResolverFacade = UserStateTypeDataResolverFacade::getInstance();
-        return !$userStateTypeDataResolverFacade->isUserLoggedIn();
+        return $userStateTypeDataResolverFacade->isUserLoggedIn();
     }
 }
