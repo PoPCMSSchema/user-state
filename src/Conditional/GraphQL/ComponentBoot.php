@@ -1,8 +1,7 @@
 <?php
 namespace PoP\UserState\Conditional\GraphQL;
 
-// use PoP\UserState\Environment;
-use PoP\API\Environment;
+use PoP\AccessControl\Environment;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
 use PoP\GraphQL\DirectiveResolvers\ConditionalOnEnvironment\SchemaNoCacheCacheControlDirectiveResolver;
 
