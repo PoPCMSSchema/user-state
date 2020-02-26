@@ -16,7 +16,7 @@ abstract class AbstractMaybeDisableFieldsIfUserLoggedInPrivateSchemaHookSet exte
         /**
          * If the user is logged in, then do not register field names
          */
-        $userStateTypeDataResolverFacade = UserStateTypeDataResolverFacade::getInstance();
-        return $userStateTypeDataResolverFacade->isUserLoggedIn();
+        $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
+        return $userStateTypeDataResolver->isUserLoggedIn();
     }
 }

@@ -29,7 +29,7 @@ abstract class AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet e
         /**
          * If the user is not logged in, then remove the field
          */
-        $userStateTypeDataResolverFacade = UserStateTypeDataResolverFacade::getInstance();
-        return $userStateTypeDataResolverFacade->isUserLoggedIn();
+        $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
+        return $userStateTypeDataResolver->isUserLoggedIn();
     }
 }

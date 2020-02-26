@@ -16,7 +16,7 @@ abstract class AbstractMaybeDisableDirectivesIfUserNotLoggedInPrivateSchemaHookS
         /**
          * If the user is not logged in, then do not register directive names
          */
-        $userStateTypeDataResolverFacade = UserStateTypeDataResolverFacade::getInstance();
-        return !$userStateTypeDataResolverFacade->isUserLoggedIn();
+        $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
+        return !$userStateTypeDataResolver->isUserLoggedIn();
     }
 }
