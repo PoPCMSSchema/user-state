@@ -2,7 +2,7 @@
 namespace PoP\UserState\Hooks;
 
 use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
-use PoP\API\Hooks\AbstractMaybeDisableDirectivesInPrivateSchemaHookSet;
+use PoP\AccessControl\Hooks\AbstractMaybeDisableDirectivesInPrivateSchemaHookSet;
 
 abstract class AbstractMaybeDisableDirectivesIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableDirectivesInPrivateSchemaHookSet
 {

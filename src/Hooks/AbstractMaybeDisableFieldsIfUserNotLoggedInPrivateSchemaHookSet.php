@@ -4,7 +4,7 @@ namespace PoP\UserState\Hooks;
 use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
-use PoP\API\Hooks\AbstractMaybeDisableFieldsInPrivateSchemaHookSet;
+use PoP\AccessControl\Hooks\AbstractMaybeDisableFieldsInPrivateSchemaHookSet;
 
 abstract class AbstractMaybeDisableFieldsIfUserNotLoggedInPrivateSchemaHookSet extends AbstractMaybeDisableFieldsInPrivateSchemaHookSet
 {
