@@ -1,7 +1,7 @@
 <?php
 namespace PoP\UserState\FieldResolvers;
 
-use PoP\ComponentModel\Engine_Vars;
+use PoP\ComponentModel\State\ApplicationState;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
@@ -37,7 +37,7 @@ class GlobalUserStateFieldResolver extends AbstractGlobalUserStateFieldResolver
     {
         switch ($fieldName) {
             case 'loggedInUserID':
-                $vars = Engine_Vars::getVars();
+                $vars = ApplicationState::getVars();
                 return $vars['global-userstate']['current-user-id'];
         }
 

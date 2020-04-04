@@ -2,7 +2,7 @@
 namespace PoP\UserState\CheckpointProcessors;
 
 use PoP\ComponentModel\CheckpointProcessorBase;
-use PoP\ComponentModel\Engine_Vars;
+use PoP\ComponentModel\State\ApplicationState;
 use PoP\ComponentModel\Error;
 
 class UserStateCheckpointProcessor extends CheckpointProcessorBase
@@ -20,7 +20,7 @@ class UserStateCheckpointProcessor extends CheckpointProcessorBase
 
     public function process(array $checkpoint)
     {
-        $vars = Engine_Vars::getVars();
+        $vars = ApplicationState::getVars();
         switch ($checkpoint[1]) {
             case self::USERLOGGEDIN:
                 if (!$vars['global-userstate']['is-user-logged-in']) {
