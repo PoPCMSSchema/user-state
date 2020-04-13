@@ -1,7 +1,8 @@
 <?php
 namespace PoP\UserState\TypeDataResolvers;
 
-interface UserStateTypeDataResolverInterface {
+interface UserStateTypeDataResolverInterface
+{
 
     public function isUserLoggedIn(): bool;
     public function getCurrentUser();

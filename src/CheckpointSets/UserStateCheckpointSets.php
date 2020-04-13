@@ -18,4 +18,3 @@ class UserStateCheckpointSets
         [UserStateCheckpointProcessor::class, UserStateCheckpointProcessor::USERLOGGEDIN],
     );
 }
-

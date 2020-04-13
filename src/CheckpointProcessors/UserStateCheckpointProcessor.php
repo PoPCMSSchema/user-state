@@ -38,4 +38,3 @@ class UserStateCheckpointProcessor extends CheckpointProcessorBase
         return parent::process($checkpoint);
     }
 }
-
