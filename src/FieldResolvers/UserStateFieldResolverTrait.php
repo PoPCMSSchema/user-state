@@ -19,8 +19,9 @@ trait UserStateFieldResolverTrait
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
-            $translationAPI->__('You must be logged in to access field \'%s\'', ''),
-            $fieldName
+            $translationAPI->__('You must be logged in to access field \'%s\' for type \'%s\'', ''),
+            $fieldName,
+            $typeResolver->getMaybeNamespacedTypeName()
         );
     }
 }
