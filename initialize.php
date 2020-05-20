@@ -1,2 +1,2 @@
 <?php
-\PoP\UserState\Component::init();
+//\PoP\UserState\Component::initialize();
