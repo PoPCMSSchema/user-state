@@ -22,6 +22,12 @@ composer require getpop/user-state
 
 ## Usage
 
+Initialize the component:
+
+``` php
+\PoP\UserState\Component::initialize();
+```
+
 Extend from class `AbstractUserStateResolver` to implement the translation directive using a specific API provider.
 
 ## Standards
