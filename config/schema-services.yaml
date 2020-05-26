@@ -1,0 +1,8 @@
+services:
+    PoP\UserState\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
+        public: true
+
+    PoP\UserState\DirectiveResolvers\:
+        resource: '../src/DirectiveResolvers/*'
+        public: true

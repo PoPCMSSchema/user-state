@@ -4,14 +4,6 @@ services:
             PoP\Hooks\HooksAPIInterface: '@hooks_api'
             PoP\Translation\TranslationAPIInterface: '@translation_api'
 
-    PoP\UserState\FieldResolvers\:
-        resource: '../src/FieldResolvers/*'
-        public: true
-
-    PoP\UserState\DirectiveResolvers\:
-        resource: '../src/DirectiveResolvers/*'
-        public: true
-
     PoP\UserState\Hooks\:
         resource: '../src/Hooks/*'
         public: true
