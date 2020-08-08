@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\FieldResolvers;
+namespace PoPSchema\UserState\FieldResolvers;
 
 use PoP\ComponentModel\State\ApplicationState;
 use PoP\ComponentModel\Schema\SchemaDefinition;

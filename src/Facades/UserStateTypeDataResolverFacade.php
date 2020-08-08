@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\Facades;
+namespace PoPSchema\UserState\Facades;
 
 use PoP\Root\Container\ContainerBuilderFactory;
-use PoP\UserState\TypeDataResolvers\UserStateTypeDataResolverInterface;
+use PoPSchema\UserState\TypeDataResolvers\UserStateTypeDataResolverInterface;
 
 class UserStateTypeDataResolverFacade
 {

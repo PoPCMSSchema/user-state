@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\FieldResolvers;
+namespace PoPSchema\UserState\FieldResolvers;
 
 use PoP\ComponentModel\State\ApplicationState;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\UserState\FieldResolvers\AbstractGlobalUserStateFieldResolver;
+use PoPSchema\UserState\FieldResolvers\AbstractGlobalUserStateFieldResolver;
 
 class GlobalUserStateFieldResolver extends AbstractGlobalUserStateFieldResolver
 {

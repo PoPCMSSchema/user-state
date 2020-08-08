@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\FieldResolvers;
+namespace PoPSchema\UserState\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\UserState\CheckpointSets\UserStateCheckpointSets;
+use PoPSchema\UserState\CheckpointSets\UserStateCheckpointSets;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
 trait UserStateFieldResolverTrait

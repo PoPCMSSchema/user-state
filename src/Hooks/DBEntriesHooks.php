@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\Hooks;
+namespace PoPSchema\UserState\Hooks;
 
 use PoP\Engine\Hooks\AbstractHookSet;
-use PoP\UserState\FieldResolvers\GlobalFieldResolver;
+use PoPSchema\UserState\FieldResolvers\GlobalFieldResolver;
 
 class DBEntriesHooks extends AbstractHookSet
 {
@@ -22,7 +22,7 @@ class DBEntriesHooks extends AbstractHookSet
     public function moveEntriesUnderDBName($dbname_datafields, $typeResolver)
     {
         $dbname_datafields['userstate'] = $this->hooksAPI->applyFilters(
-            'PoP\UserState\DataloaderHooks:metaFields',
+            'PoPSchema\UserState\DataloaderHooks:metaFields',
             GlobalFieldResolver::getFieldNamesToResolve()
         );
         return $dbname_datafields;

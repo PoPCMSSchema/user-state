@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\FieldResolvers;
+namespace PoPSchema\UserState\FieldResolvers;
 
 use PoP\Engine\TypeResolvers\RootTypeResolver;
-use PoP\UserState\FieldResolvers\AbstractUserStateFieldResolver;
+use PoPSchema\UserState\FieldResolvers\AbstractUserStateFieldResolver;
 use PoP\ComponentModel\State\ApplicationState;
-use PoP\Users\TypeResolvers\UserTypeResolver;
+use PoPSchema\Users\TypeResolvers\UserTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;

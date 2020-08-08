@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\Hooks;
+namespace PoPSchema\UserState\Hooks;
 
 use PoP\Engine\Hooks\AbstractHookSet;
 use PoP\Engine\FieldResolvers\OperatorGlobalFieldResolver;
-use PoP\UserState\Facades\UserStateTypeDataResolverFacade;
+use PoPSchema\UserState\Facades\UserStateTypeDataResolverFacade;
 
 class VarsHooks extends AbstractHookSet
 {

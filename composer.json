@@ -1,12 +1,12 @@
 {
-    "name": "getpop/user-state",
+    "name": "pop-schema/user-state",
     "type": "library",
     "description": "Enables users to log in and have user state",
     "keywords": [
         "PoP",
         "user-state"
     ],
-    "homepage": "https://github.com/getpop/user-state",
+    "homepage": "https://github.com/pop-schema/user-state",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
     "prefer-stable": true,
     "require": {
         "php": "~7.2",
-        "getpop/users": "dev-master"
+        "pop-schema/users": "dev-master"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\UserState\\": "src"
+            "PoPSchema\\UserState\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\UserState\\": "tests"
+            "PoPSchema\\UserState\\": "tests"
         }
     },
     "scripts": {

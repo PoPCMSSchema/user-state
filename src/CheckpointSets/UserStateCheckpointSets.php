@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\CheckpointSets;
+namespace PoPSchema\UserState\CheckpointSets;
 
 use PoP\Engine\CheckpointProcessors\RequestCheckpointProcessor;
-use PoP\UserState\CheckpointProcessors\UserStateCheckpointProcessor;
+use PoPSchema\UserState\CheckpointProcessors\UserStateCheckpointProcessor;
 
 class UserStateCheckpointSets
 {

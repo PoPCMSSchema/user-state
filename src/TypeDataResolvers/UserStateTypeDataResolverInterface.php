@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\UserState\TypeDataResolvers;
+namespace PoPSchema\UserState\TypeDataResolvers;
 
 interface UserStateTypeDataResolverInterface
 {
