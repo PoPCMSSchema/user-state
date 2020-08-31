@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace PoPSchema\UserState\CheckpointProcessors;
 
-use PoP\ComponentModel\CheckpointProcessorBase;
+use PoP\Engine\CheckpointProcessors\AbstractCheckpointProcessor;
 use PoP\ComponentModel\State\ApplicationState;
 use PoP\ComponentModel\Error;
 
-class UserStateCheckpointProcessor extends CheckpointProcessorBase
+class UserStateCheckpointProcessor extends AbstractCheckpointProcessor
 {
     public const USERLOGGEDIN = 'userloggedin';
     public const USERNOTLOGGEDIN = 'usernotloggedin';
