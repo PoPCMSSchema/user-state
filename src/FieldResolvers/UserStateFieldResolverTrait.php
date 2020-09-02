@@ -10,13 +10,28 @@ use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
 trait UserStateFieldResolverTrait
 {
-    protected function getValidationCheckpoints(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?array
-    {
+    /**
+     * @param array<string, mixed> $fieldArgs
+     * @return array<array>|null A checkpoint set, or null
+     */
+    protected function getValidationCheckpoints(
+        TypeResolverInterface $typeResolver,
+        object $resultItem,
+        string $fieldName,
+        array $fieldArgs = []
+    ): ?array {
         return UserStateCheckpointSets::LOGGEDIN_DATAFROMSERVER;
     }
 
-    protected function getValidationCheckpointsErrorMessage(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): ?string
-    {
+    /**
+     * @param array<string, mixed> $fieldArgs
+     */
+    protected function getValidationCheckpointsErrorMessage(
+        TypeResolverInterface $typeResolver,
+        object $resultItem,
+        string $fieldName,
+        array $fieldArgs = []
+    ): ?string {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
             $translationAPI->__('You must be logged in to access field \'%s\' for type \'%s\'', ''),
