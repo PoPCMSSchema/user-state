@@ -26,7 +26,10 @@ class VarsHooks extends AbstractHookSet
         );
     }
 
-    public function setSafeVars($vars_in_array)
+    /**
+     * @param array<array> $vars_in_array
+     */
+    public function setSafeVars(array $vars_in_array): void
     {
         // Remove the current user object
         $safeVars = &$vars_in_array[0];
@@ -35,8 +38,10 @@ class VarsHooks extends AbstractHookSet
 
     /**
      * Add the user's (non)logged-in state
+     *
+     * @param array<array> $vars_in_array
      */
-    public function addVars($vars_in_array)
+    public function addVars(array $vars_in_array): void
     {
         $vars = &$vars_in_array[0];
         $vars['global-userstate'] = [];
