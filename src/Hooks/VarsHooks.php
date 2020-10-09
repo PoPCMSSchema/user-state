@@ -43,7 +43,7 @@ class VarsHooks extends AbstractHookSet
      */
     public function addVars(array $vars_in_array): void
     {
-        $vars = &$vars_in_array[0];
+        [&$vars] = $vars_in_array;
         $vars['global-userstate'] = [];
         $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
         if ($userStateTypeDataResolver->isUserLoggedIn()) {
