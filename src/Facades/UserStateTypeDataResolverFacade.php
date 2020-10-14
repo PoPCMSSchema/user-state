@@ -14,7 +14,7 @@ class UserStateTypeDataResolverFacade
         /**
          * @var UserStateTypeDataResolverInterface
          */
-        $service = ContainerBuilderFactory::getInstance()->get('user_state_type_data_resolver');
+        $service = ContainerBuilderFactory::getInstance()->get(UserStateTypeDataResolverInterface::class);
         return $service;
     }
 }
