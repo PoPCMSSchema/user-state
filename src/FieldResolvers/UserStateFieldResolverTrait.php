@@ -27,11 +27,12 @@ trait UserStateFieldResolverTrait
      * @param array<string, mixed> $fieldArgs
      */
     protected function getValidationCheckpointsErrorMessage(
+        string $errorMessage,
         TypeResolverInterface $typeResolver,
         object $resultItem,
         string $fieldName,
         array $fieldArgs = []
-    ): ?string {
+    ): string {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
             $translationAPI->__('You must be logged in to access field \'%s\' for type \'%s\'', ''),
