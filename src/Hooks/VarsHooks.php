@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PoPSchema\UserState\Hooks;
 
-use PoP\Engine\Hooks\AbstractHookSet;
+use PoP\Hooks\AbstractHookSet;
 use PoP\Engine\FieldResolvers\OperatorGlobalFieldResolver;
 use PoPSchema\UserState\Facades\UserStateTypeDataResolverFacade;
 
