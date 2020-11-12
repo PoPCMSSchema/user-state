@@ -7,6 +7,7 @@ namespace PoPSchema\UserState\FieldResolvers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoPSchema\UserState\CheckpointSets\UserStateCheckpointSets;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\ComponentModel\Error;
 
 trait UserStateFieldResolverTrait
 {
@@ -31,7 +32,8 @@ trait UserStateFieldResolverTrait
         TypeResolverInterface $typeResolver,
         object $resultItem,
         string $fieldName,
-        array $fieldArgs = []
+        array $fieldArgs = [],
+        Error $error
     ): string {
         $translationAPI = TranslationAPIFacade::getInstance();
         return sprintf(
