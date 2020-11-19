@@ -6,7 +6,7 @@ namespace PoPSchema\UserState\Hooks;
 
 use PoP\Hooks\AbstractHookSet;
 use PoP\Engine\FieldResolvers\OperatorGlobalFieldResolver;
-use PoPSchema\UserState\Facades\UserStateTypeDataResolverFacade;
+use PoPSchema\UserState\State\ApplicationStateUtils;
 
 class VarsHooks extends AbstractHookSet
 {
@@ -44,16 +44,6 @@ class VarsHooks extends AbstractHookSet
     public function addVars(array $vars_in_array): void
     {
         [&$vars] = $vars_in_array;
-        $vars['global-userstate'] = [];
-        $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
-        if ($userStateTypeDataResolver->isUserLoggedIn()) {
-            $vars['global-userstate']['is-user-logged-in'] = true;
-            $vars['global-userstate']['current-user'] = $userStateTypeDataResolver->getCurrentUser();
-            $vars['global-userstate']['current-user-id'] = $userStateTypeDataResolver->getCurrentUserID();
-        } else {
-            $vars['global-userstate']['is-user-logged-in'] = false;
-            $vars['global-userstate']['current-user'] = null;
-            $vars['global-userstate']['current-user-id'] = null;
-        }
+        ApplicationStateUtils::setUserStateVars($vars);
     }
 }
