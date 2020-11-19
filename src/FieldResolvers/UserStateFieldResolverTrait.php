@@ -7,7 +7,7 @@ namespace PoPSchema\UserState\FieldResolvers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoPSchema\UserState\CheckpointSets\UserStateCheckpointSets;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\Error;
+use PoP\ComponentModel\ErrorHandling\Error;
 
 trait UserStateFieldResolverTrait
 {
