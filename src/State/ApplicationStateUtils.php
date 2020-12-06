@@ -13,7 +13,7 @@ class ApplicationStateUtils
      *
      * @param array<string, mixed> $vars
      */
-    public function setUserStateVars(array &$vars): void
+    public static function setUserStateVars(array &$vars): void
     {
         $vars['global-userstate'] = [];
         $userStateTypeDataResolver = UserStateTypeDataResolverFacade::getInstance();
