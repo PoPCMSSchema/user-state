@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\UserState\FieldResolvers;
+namespace PoPSchema\UserState\FieldResolvers\ObjectType;
 
-use PoP\ComponentModel\FieldResolvers\AbstractGlobalFieldResolver;
+use PoP\ComponentModel\FieldResolvers\ObjectType\AbstractGlobalFieldResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\SchemaTypeModifiers;
 use PoP\ComponentModel\State\ApplicationState;
