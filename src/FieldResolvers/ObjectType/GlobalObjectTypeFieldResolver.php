@@ -4,32 +4,44 @@ declare(strict_types=1);
 
 namespace PoPSchema\UserState\FieldResolvers\ObjectType;
 
-use PoP\Engine\TypeResolvers\ObjectType\RootTypeResolver;
-use PoPSchema\UserState\FieldResolvers\ObjectType\AbstractUserStateFieldResolver;
+use PoP\ComponentModel\FieldResolvers\ObjectType\AbstractGlobalObjectTypeFieldResolver;
+use PoP\ComponentModel\Schema\SchemaDefinition;
+use PoP\ComponentModel\Schema\SchemaTypeModifiers;
 use PoP\ComponentModel\State\ApplicationState;
-use PoPSchema\Users\TypeResolvers\ObjectType\UserTypeResolver;
 use PoP\ComponentModel\TypeResolvers\ObjectType\ObjectTypeResolverInterface;
 
-class RootMeFieldResolver extends AbstractUserStateFieldResolver
+class GlobalObjectTypeFieldResolver extends AbstractGlobalObjectTypeFieldResolver
 {
-    public function getObjectTypeResolverClassesToAttachTo(): array
-    {
-        return [
-            RootTypeResolver::class,
-        ];
-    }
-
     public function getFieldNamesToResolve(): array
     {
         return [
-            'me',
+            'isUserLoggedIn',
         ];
+    }
+
+    public function getSchemaFieldType(ObjectTypeResolverInterface $objectTypeResolver, string $fieldName): string
+    {
+        $types = [
+            'isUserLoggedIn' => SchemaDefinition::TYPE_BOOL,
+        ];
+        return $types[$fieldName] ?? parent::getSchemaFieldType($objectTypeResolver, $fieldName);
+    }
+
+    public function getSchemaFieldTypeModifiers(ObjectTypeResolverInterface $objectTypeResolver, string $fieldName): ?int
+    {
+        $nonNullableFieldNames = [
+            'isUserLoggedIn',
+        ];
+        if (in_array($fieldName, $nonNullableFieldNames)) {
+            return SchemaTypeModifiers::NON_NULLABLE;
+        }
+        return parent::getSchemaFieldTypeModifiers($objectTypeResolver, $fieldName);
     }
 
     public function getSchemaFieldDescription(ObjectTypeResolverInterface $objectTypeResolver, string $fieldName): ?string
     {
         $descriptions = [
-            'me' => $this->translationAPI->__('The logged-in user', 'user-state'),
+            'isUserLoggedIn' => $this->translationAPI->__('Is the user logged-in?', 'user-state'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($objectTypeResolver, $fieldName);
     }
@@ -50,21 +62,11 @@ class RootMeFieldResolver extends AbstractUserStateFieldResolver
         array $options = []
     ): mixed {
         switch ($fieldName) {
-            case 'me':
+            case 'isUserLoggedIn':
                 $vars = ApplicationState::getVars();
-                return $vars['global-userstate']['current-user-id'];
+                return $vars['global-userstate']['is-user-logged-in'];
         }
 
         return parent::resolveValue($objectTypeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
-    }
-
-    public function getFieldTypeResolverClass(ObjectTypeResolverInterface $objectTypeResolver, string $fieldName): ?string
-    {
-        switch ($fieldName) {
-            case 'me':
-                return UserTypeResolver::class;
-        }
-
-        return parent::getFieldTypeResolverClass($objectTypeResolver, $fieldName);
     }
 }
