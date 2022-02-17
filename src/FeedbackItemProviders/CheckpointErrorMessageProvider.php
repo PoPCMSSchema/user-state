@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoPCMSSchema\UserState\FeedbackMessageProviders;
+namespace PoPCMSSchema\UserState\FeedbackItemProviders;
 
-use PoP\Root\FeedbackMessageProviders\AbstractFeedbackMessageProvider;
+use PoP\Root\FeedbackItemProviders\AbstractFeedbackItemProvider;
 use PoP\Root\Feedback\FeedbackCategories;
 
-class CheckpointErrorMessageProvider extends AbstractFeedbackMessageProvider
+class CheckpointErrorMessageProvider extends AbstractFeedbackItemProvider
 {
     public const E1 = '1';
     public const E2 = '2';
