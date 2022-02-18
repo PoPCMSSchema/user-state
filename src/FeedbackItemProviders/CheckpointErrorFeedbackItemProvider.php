@@ -7,7 +7,7 @@ namespace PoPCMSSchema\UserState\FeedbackItemProviders;
 use PoP\Root\FeedbackItemProviders\AbstractFeedbackItemProvider;
 use PoP\Root\Feedback\FeedbackCategories;
 
-class CheckpointErrorMessageProvider extends AbstractFeedbackItemProvider
+class CheckpointErrorFeedbackItemProvider extends AbstractFeedbackItemProvider
 {
     public const E1 = '1';
     public const E2 = '2';
